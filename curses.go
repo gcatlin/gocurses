@@ -213,3 +213,7 @@ func Getmaxyx() (row, col int) {
 func (win *Window) Clrtoeol() {
 	C.wclrtoeol((*C.WINDOW)(win))
 }
+
+func Cursor(vis byte) {
+	C.curs_set(C.int(vis))
+}
