@@ -127,8 +127,8 @@ func (win *Window) Border(ls, rs, ts, bs, tl, tr, bl, br int) {
 }
 
 // Clear the screen
-func (win *Window) Clear() error {
-	C.wclear(win.win)
+func (win *Window) Clear() {
+	C.wclear((*C.WINDOW)(win))
 }
 
 // Delete current window.
