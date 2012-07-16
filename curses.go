@@ -174,7 +174,7 @@ func (win *Window) Addstr(str ...interface{}) {
 }
 
 func (win *Window) Move(y, x int) {
-	C.wmove((*C.WINDOWS)(win), C.int(y), C.int(x))
+	C.wmove((*C.WINDOW)(win), C.int(y), C.int(x))
 	return
 }
 
