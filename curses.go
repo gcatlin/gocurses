@@ -173,6 +173,11 @@ func (win *Window) Addstr(str ...interface{}) {
 	C.waddstr((*C.WINDOW)(win), res)
 }
 
+func (win *Window) Move(y, x int) {
+	C.wmove((*C.WINDOWS)(win), C.int(y), C.int(x))
+	return
+}
+
 func (win *Window) Mvaddstr(y, x int, str ...interface{}) {
 	res := (*C.char)(C.CString(fmt.Sprint(str...)))
 	defer C.free(unsafe.Pointer(res))
